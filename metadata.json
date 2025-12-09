@@ -1,0 +1,7 @@
+{
+  "name": "ERP_Penjualan Alat Elektronik Yenny",
+  "description": "A Microservice-ready, AI-driven ERP blueprint prototype for Electronics Retail. Features Inventory (Serial # tracking), Sales (Warranty), and Financials with Gemini AI integration for demand forecasting and anomaly detection.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
