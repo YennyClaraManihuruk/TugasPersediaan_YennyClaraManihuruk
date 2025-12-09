@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NexRetail ERP - AI Driven</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Babel for runtime compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
       /* Custom scrollbar for premium feel */
       ::-webkit-scrollbar {
@@ -26,16 +28,26 @@
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
     "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
-    "papaparse": "https://aistudiocdn.com/papaparse@5.4.1"
+    "papaparse": "https://aistudiocdn.com/papaparse@5.4.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
   }
 }
+</script>
+<script>
+  // Polyfill process.env for Netlify Environment Variable Injection
+  window.process = {
+    env: {
+      API_KEY: "REPLACE_WITH_API_KEY"
+    }
+  };
 </script>
 </head>
   <body class="bg-slate-900 text-slate-100 antialiased overflow-hidden selection:bg-blue-500 selection:text-white">
     <div id="root"></div>
+    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
   </body>
 </html>
